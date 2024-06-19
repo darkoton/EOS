@@ -4,6 +4,7 @@ import path from 'path';
 const __dirname = path.resolve();
 // https://vitejs.dev/config/
 export default defineConfig({
+  base: '/EOS',
   plugins: [react()],
   resolve: {
     alias: {
