@@ -1,0 +1,77 @@
+.blue {
+  &__body {
+    display: flex;
+  }
+
+  &__left {
+    width: 100%;
+    max-width: 35%;
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+
+    img {
+      width: 100%;
+      object-fit: cover;
+      transform: translateX(20%);
+    }
+  }
+
+  &__right {
+    background-color: $colorBlue;
+    width: 100%;
+    color: $colorWhite;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    @include adaptiv-indent(padding, 175, 30, 0, 0, 1);
+    font-weight: bold;
+  }
+
+  &__text-body {
+    width: 100%;
+    max-width: 65%;
+    z-index: 2;
+  }
+
+  &__title {
+    @include adaptiv-value(font-size, 51, 30, 0);
+    font-weight: bold;
+    @include adaptiv-value(margin-bottom, 65, 25, 0);
+  }
+
+  &__text {
+    @include adaptiv-value(font-size, 18, 16, 0);
+    @include adaptiv-value(line-height, 48, 25, 0);
+    @include adaptiv-value(margin-bottom, 85, 30, 0);
+  }
+
+  @media (max-width: 992px) {
+    &__left {
+      display: none;
+    }
+
+    &__text-body {
+      max-width: 100%;
+      padding: 0 10px;
+    }
+
+    &__right {
+      position: relative;
+      max-width: 100%;
+      &::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        transform: scaleX(-1);
+        width: 80%;
+        height: 100%;
+        background: url("@/assets/images/blue/man.png") 0 100% / contain no-repeat;
+        // z-index: -1;
+        filter: brightness(50%);
+      }
+    }
+  }
+}

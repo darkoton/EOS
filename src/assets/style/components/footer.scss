@@ -1,0 +1,112 @@
+.footer {
+  background: url("@/assets/images/footer/bg.png") 0 0 / cover no-repeat;
+  font-weight: bold;
+
+  &__body {
+    @include adaptiv-value(padding-top, 180, 40, 1);
+  }
+  &__main {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    @include adaptiv-value(gap, 40, 20, 1);
+    @include adaptiv-value(margin-bottom, 400, 150, 1);
+  }
+
+  &__title {
+    width: 100%;
+    font-weight: bold;
+    @include adaptiv-value(font-size, 60, 25, 1);
+    @include adaptiv-value(line-height, 103, 40, 1);
+  }
+
+  &__text {
+    width: 100%;
+    @include adaptiv-value(font-size, 18, 16, 1);
+    @include adaptiv-value(line-height, 48, 30, 1);
+  }
+
+  &__down {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  &__logo {
+    @include adaptiv-value(margin-bottom, 75, 25, 1);
+  }
+
+  &__rights {
+    @include adaptiv-value(font-size, 18, 16, 1);
+    @include adaptiv-value(line-height, 48, 30, 1);
+    @include adaptiv-value(margin-bottom, 100, 40, 1);
+
+    a {
+      color: $colorSkyBlue;
+    }
+  }
+
+  &__menu {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+    @include adaptiv-value(column-gap, 60, 25, 1);
+    @include adaptiv-value(margin-bottom, 140, 30, 1);
+
+    &-item {
+      color: $colorWhite;
+      @include adaptiv-value(font-size, 24, 20, 1);
+      @include adaptiv-value(line-height, 48, 30, 1);
+      @media (any-hover: hover) {
+        cursor: pointer;
+        transition: all 0.3s ease 0s;
+        &:hover {
+          color: $colorSkyBlue;
+        }
+      }
+    }
+  }
+
+  &__creater {
+    color: #adadad;
+    margin-bottom: 20px;
+    font-weight: 400;
+
+    a {
+      color: $colorSkyBlue;
+      position: relative;
+
+      &::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 0%;
+        height: 1px;
+        background: $colorSkyBlue;
+        transition: all 0.3s ease 0s;
+      }
+
+      @media (any-hover: hover) {
+        cursor: pointer;
+        &:hover {
+          &::after {
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+
+  @media (max-width: 830px) {
+    &__main {
+      flex-direction: column;
+    }
+
+    & br {
+      display: none;
+    }
+  }
+}
